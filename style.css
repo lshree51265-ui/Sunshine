@@ -1284,3 +1284,92 @@ h1{
     }
 
 }
+/* ===========================================
+   MONEY TREE EFFECTS
+=========================================== */
+
+.money-effects{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+.gold-rays{
+
+    position:absolute;
+
+    width:1200px;
+
+    height:1200px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    rgba(255,215,0,.18),
+
+    rgba(255,215,0,.08),
+
+    transparent 70%
+
+    );
+
+    animation:
+
+    raysPulse 8s ease-in-out infinite;
+
+}
+
+@keyframes raysPulse{
+
+    0%{
+
+        transform:
+
+        translate(-50%,-50%)
+
+        scale(.9);
+
+        opacity:.5;
+
+    }
+
+    50%{
+
+        transform:
+
+        translate(-50%,-50%)
+
+        scale(1.08);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+
+        translate(-50%,-50%)
+
+        scale(.9);
+
+        opacity:.5;
+
+    }
+
+}
