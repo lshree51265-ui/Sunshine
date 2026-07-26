@@ -1022,3 +1022,57 @@ for (let i = 0; i < 150; i++) {
     }
 
 }
+/* ===========================================================
+   PALM TREE MOVEMENT
+=========================================================== */
+
+const palms = document.querySelectorAll(".palm");
+
+palms.forEach((tree,index)=>{
+
+    setInterval(()=>{
+
+        const angle =
+            Math.sin(Date.now()/1800+index)*2;
+
+        tree.style.transform =
+            `rotate(${angle}deg)`;
+
+    },40);
+
+});
+/* ===========================================================
+   SUN PULSE
+=========================================================== */
+
+const sun = document.getElementById("sun");
+
+setInterval(()=>{
+
+    const size =
+        250 + Math.sin(Date.now()/900)*15;
+
+    sun.style.width = size+"px";
+
+    sun.style.height = size+"px";
+
+},40);
+/* ===========================================================
+   OCEAN PARALLAX
+=========================================================== */
+
+const heroImage = document.querySelector(".hero-background img");
+
+window.addEventListener("mousemove",(e)=>{
+
+    const x =
+        (e.clientX/window.innerWidth-.5)*12;
+
+    const y =
+        (e.clientY/window.innerHeight-.5)*12;
+
+    heroImage.style.transform =
+
+    `translate(${x}px,${y}px) scale(1.18)`;
+
+});
