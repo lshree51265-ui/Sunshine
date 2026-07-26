@@ -959,3 +959,66 @@ for (let i = 0; i < 150; i++) {
     particleContainer.appendChild(particle);
 
 }
+/* ===========================================
+   GOLD PARTICLES
+=========================================== */
+
+.gold-particle{
+
+    position:absolute;
+
+    width:4px;
+
+    height:4px;
+
+    border-radius:50%;
+
+    background:#FFD54A;
+
+    box-shadow:
+
+    0 0 8px #FFD54A,
+
+    0 0 15px #FFD54A;
+
+    animation:
+
+    floatingParticle linear infinite;
+
+}
+
+@keyframes floatingParticle{
+
+    0%{
+
+        transform:
+
+        translateY(80px);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    80%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+
+        translateY(-110vh);
+
+        opacity:0;
+
+    }
+
+}
