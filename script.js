@@ -929,3 +929,33 @@ music.volume=.10;
 /* ===========================================================
    END OF PART 2
 =========================================================== */
+/* ===========================================================
+   GOLD PARTICLES
+=========================================================== */
+
+const particleContainer = document.getElementById("particles");
+
+for (let i = 0; i < 150; i++) {
+
+    const particle = document.createElement("div");
+
+    particle.className = "gold-particle";
+
+    particle.style.left = Math.random() * 100 + "%";
+
+    particle.style.top = Math.random() * 100 + "%";
+
+    particle.style.animationDelay = Math.random() * 10 + "s";
+
+    particle.style.animationDuration =
+        8 + Math.random() * 12 + "s";
+
+    particle.style.opacity =
+        0.2 + Math.random() * 0.8;
+
+    particle.style.transform =
+        `scale(${0.3 + Math.random()})`;
+
+    particleContainer.appendChild(particle);
+
+}
