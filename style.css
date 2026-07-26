@@ -1373,3 +1373,80 @@ h1{
     }
 
 }
+/* ===========================================
+   GOLD COINS
+=========================================== */
+
+.coin{
+
+    position:absolute;
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    #FFF4A5,
+
+    #FFD700,
+
+    #C89B00
+
+    );
+
+    box-shadow:
+
+    0 0 10px gold,
+
+    0 0 20px gold;
+
+    animation:
+
+    coinFloat linear infinite;
+
+}
+
+@keyframes coinFloat{
+
+    0%{
+
+        transform:
+
+        translateY(30px)
+
+        scale(.8);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    80%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+
+        translateY(-150px)
+
+        scale(1.3);
+
+        opacity:0;
+
+    }
+
+}
