@@ -1076,3 +1076,29 @@ window.addEventListener("mousemove",(e)=>{
     `translate(${x}px,${y}px) scale(1.18)`;
 
 });
+/* ===========================================================
+   GOLD COINS
+=========================================================== */
+
+const coinContainer =
+document.querySelector(".coins");
+
+for(let i=0;i<80;i++){
+
+    const coin=document.createElement("div");
+
+    coin.className="coin";
+
+    coin.style.left=Math.random()*100+"%";
+
+    coin.style.top=Math.random()*100+"%";
+
+    coin.style.animationDelay=Math.random()*10+"s";
+
+    coin.style.animationDuration=
+
+    6+Math.random()*8+"s";
+
+    coinContainer.appendChild(coin);
+
+}
