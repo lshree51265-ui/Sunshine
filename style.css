@@ -1243,3 +1243,44 @@ nav a:hover{
     0 20px 50px rgba(212,175,55,.35);
 
 }
+/* ===========================================
+   GOLD HEADING GLOW
+=========================================== */
+
+h1{
+
+    animation:
+
+    titleGlow 5s ease-in-out infinite;
+
+}
+
+@keyframes titleGlow{
+
+    0%{
+
+        text-shadow:
+
+        0 0 20px rgba(212,175,55,.4);
+
+    }
+
+    50%{
+
+        text-shadow:
+
+        0 0 60px rgba(255,215,0,.8),
+
+        0 0 120px rgba(255,215,0,.4);
+
+    }
+
+    100%{
+
+        text-shadow:
+
+        0 0 20px rgba(212,175,55,.4);
+
+    }
+
+}
