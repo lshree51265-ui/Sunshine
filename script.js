@@ -1102,3 +1102,68 @@ for(let i=0;i<80;i++){
     coinContainer.appendChild(coin);
 
 }
+/* ===========================================================
+   FLOATING CURRENCY
+=========================================================== */
+
+const symbols=[
+
+"$",
+
+"₹",
+
+"€",
+
+"£"
+
+];
+
+const currencyContainer=
+
+document.querySelector(
+
+".currency-container"
+
+);
+
+setInterval(()=>{
+
+    const symbol=
+
+    document.createElement("div");
+
+    symbol.className="currency";
+
+    symbol.innerHTML=
+
+    symbols[
+
+    Math.floor(
+
+    Math.random()*symbols.length
+
+    )
+
+    ];
+
+    symbol.style.left=
+
+    Math.random()*100+"%";
+
+    symbol.style.fontSize=
+
+    24+
+
+    Math.random()*30+
+
+    "px";
+
+    currencyContainer.appendChild(symbol);
+
+    setTimeout(()=>{
+
+        symbol.remove();
+
+    },9000);
+
+},600);
