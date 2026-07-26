@@ -1,0 +1,1974 @@
+/* =======================================================
+   MORNING LUXURY
+   Version 1.0
+======================================================= */
+
+/* ===========================
+   GOOGLE FONTS
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+
+/* ===========================
+   ROOT VARIABLES
+=========================== */
+
+:root{
+
+    --gold:#D4AF37;
+    --gold-light:#F7E7CE;
+    --champagne:#F9F4E8;
+    --white:#FFFFFF;
+
+    --navy:#071320;
+    --navy-light:#0D2032;
+
+    --emerald:#0B5D4B;
+
+    --glass:rgba(255,255,255,.10);
+
+    --glass-border:rgba(255,255,255,.25);
+
+    --shadow:0 20px 60px rgba(0,0,0,.35);
+
+    --transition:.6s ease;
+
+}
+
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#08131F;
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#08131F;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(var(--gold),
+    #F7E7CE);
+
+    border-radius:30px;
+
+}
+
+
+/* ===========================
+   TYPOGRAPHY
+=========================== */
+
+h1,h2,h3{
+
+    font-family:"Playfair Display",serif;
+
+}
+
+p{
+
+    line-height:1.8;
+
+    color:#F5F5F5;
+
+}
+
+
+/* ===========================
+   LINKS
+=========================== */
+
+a{
+
+    text-decoration:none;
+
+    color:white;
+
+}
+
+
+/* ===========================
+   SECTION
+=========================== */
+
+section{
+
+    position:relative;
+
+    min-height:100vh;
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+}
+
+
+/* ===========================
+   LOADER
+=========================== */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#071320;
+
+    z-index:99999;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.loader-logo{
+
+    font-size:52px;
+
+    font-family:"Playfair Display";
+
+    color:var(--gold);
+
+    margin-bottom:20px;
+
+    letter-spacing:3px;
+
+}
+
+
+.loader-subtitle{
+
+    color:white;
+
+    opacity:.8;
+
+}
+
+
+.loader-progress{
+
+    margin-top:35px;
+
+    width:260px;
+
+    height:5px;
+
+    background:#1b3148;
+
+    overflow:hidden;
+
+    border-radius:100px;
+
+}
+
+
+.loader-bar{
+
+    height:100%;
+
+    width:0;
+
+    background:linear-gradient(
+    90deg,
+    var(--gold),
+    white);
+
+}
+
+
+/* ===========================
+   PARTICLES
+=========================== */
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:3;
+
+}
+
+
+/* ===========================
+   SUN
+=========================== */
+
+#sun{
+
+    position:fixed;
+
+    width:250px;
+
+    height:250px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+    #FFE78E,
+    #FDB813,
+    transparent);
+
+    top:75%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    filter:blur(4px);
+
+    opacity:.9;
+
+    z-index:1;
+
+}
+
+
+/* ===========================
+   CLOUDS
+=========================== */
+
+.cloud{
+
+    position:fixed;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:100px;
+
+    filter:blur(10px);
+
+    z-index:2;
+
+}
+
+.cloud1{
+
+    width:240px;
+
+    height:70px;
+
+    top:12%;
+
+    left:-250px;
+
+}
+
+.cloud2{
+
+    width:180px;
+
+    height:55px;
+
+    top:28%;
+
+    right:-200px;
+
+}
+
+.cloud3{
+
+    width:220px;
+
+    height:60px;
+
+    top:20%;
+
+    left:35%;
+
+}
+
+
+/* ===========================
+   NAVIGATION
+=========================== */
+
+nav{
+
+    position:fixed;
+
+    top:30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:88%;
+
+    padding:18px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:60px;
+
+    z-index:999;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.logo{
+
+    font-size:28px;
+
+    color:var(--gold);
+
+    font-family:"Playfair Display";
+
+}
+
+
+nav ul{
+
+    display:flex;
+
+    gap:32px;
+
+    list-style:none;
+
+}
+
+
+nav a{
+
+    transition:.4s;
+
+    font-weight:500;
+
+}
+
+
+nav a:hover{
+
+    color:var(--gold);
+
+}
+
+
+/* ===========================
+   HERO
+=========================== */
+
+#hero{
+
+    position:relative;
+
+}
+
+
+.hero-background{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+
+.hero-background img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transform:scale(1.12);
+
+}
+
+
+/* ===========================
+   GOLD OVERLAY
+=========================== */
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    rgba(0,0,0,.45),
+
+    rgba(7,19,32,.50),
+
+    rgba(7,19,32,.75)
+
+    );
+
+}
+
+
+/* ===========================
+   HERO CONTENT
+=========================== */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+
+    max-width:900px;
+
+    padding:30px;
+
+}
+
+
+.hero-content h2{
+
+    font-size:42px;
+
+    color:var(--gold-light);
+
+    margin-bottom:25px;
+
+}
+
+
+.hero-content h1{
+
+    font-size:92px;
+
+    line-height:1.1;
+
+    margin-bottom:35px;
+
+    text-shadow:
+
+    0 0 40px rgba(212,175,55,.4);
+
+}
+
+
+.hero-content p{
+
+    max-width:720px;
+
+    margin:auto;
+
+    font-size:22px;
+
+    margin-bottom:45px;
+
+}
+
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.primary-button{
+
+    display:inline-block;
+
+    padding:18px 44px;
+
+    border-radius:60px;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    var(--gold),
+
+    #F8E08A
+
+    );
+
+    color:#071320;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    transition:.4s;
+
+    box-shadow:
+
+    0 15px 40px rgba(212,175,55,.35);
+
+}
+
+.primary-button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 25px 60px rgba(212,175,55,.45);
+
+}
+
+
+/* ===========================
+   SCROLL INDICATOR
+=========================== */
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:45px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:10px;
+
+    z-index:10;
+
+}
+
+.mouse{
+
+    width:32px;
+
+    height:56px;
+
+    border:2px solid white;
+
+    border-radius:50px;
+
+}
+
+.wheel{
+
+    width:5px;
+
+    height:12px;
+
+    background:white;
+
+    border-radius:30px;
+
+    margin:8px auto;
+
+}
+/* =======================================================
+   HERO ANIMATIONS
+======================================================= */
+
+/* Slow cinematic zoom */
+
+.hero-background img{
+
+    animation:heroZoom 35s ease-in-out infinite alternate;
+
+}
+
+@keyframes heroZoom{
+
+    from{
+
+        transform:scale(1.10);
+
+    }
+
+    to{
+
+        transform:scale(1.25);
+
+    }
+
+}
+
+
+/* =======================================================
+   SUNRISE
+======================================================= */
+
+#sun{
+
+    animation:
+
+    sunrise 18s ease forwards,
+
+    sunGlow 5s ease-in-out infinite;
+
+}
+
+@keyframes sunrise{
+
+    from{
+
+        top:82%;
+        opacity:.2;
+        transform:translateX(-50%) scale(.7);
+
+    }
+
+    to{
+
+        top:12%;
+        opacity:1;
+        transform:translateX(-50%) scale(1);
+
+    }
+
+}
+
+@keyframes sunGlow{
+
+    0%{
+
+        box-shadow:0 0 60px #FDB813;
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 120px #FFD55A,
+        0 0 220px rgba(255,215,90,.6);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 60px #FDB813;
+
+    }
+
+}
+
+
+/* =======================================================
+   CLOUD MOVEMENT
+======================================================= */
+
+.cloud1{
+
+    animation:cloudLeft 90s linear infinite;
+
+}
+
+.cloud2{
+
+    animation:cloudRight 110s linear infinite;
+
+}
+
+.cloud3{
+
+    animation:cloudMiddle 75s linear infinite;
+
+}
+
+@keyframes cloudLeft{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(1800px);
+
+    }
+
+}
+
+@keyframes cloudRight{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-1700px);
+
+    }
+
+}
+
+@keyframes cloudMiddle{
+
+    0%{
+
+        transform:translateX(-150px);
+
+    }
+
+    50%{
+
+        transform:translateX(250px);
+
+    }
+
+    100%{
+
+        transform:translateX(-150px);
+
+    }
+
+}
+
+
+/* =======================================================
+   HERO TEXT
+======================================================= */
+
+.hero-content h2{
+
+    animation:
+
+    fadeUp 1.4s .4s both;
+
+}
+
+.hero-content h1{
+
+    animation:
+
+    fadeUp 1.4s .9s both;
+
+}
+
+.hero-content p{
+
+    animation:
+
+    fadeUp 1.4s 1.5s both;
+
+}
+
+.primary-button{
+
+    animation:
+
+    fadeUp 1.4s 2s both;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        translateY(0);
+
+    }
+
+}
+
+
+/* =======================================================
+   GOLD BUTTON SHIMMER
+======================================================= */
+
+.primary-button{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.primary-button::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:80px;
+
+    height:200%;
+
+    background:
+
+    rgba(255,255,255,.4);
+
+    transform:rotate(25deg);
+
+    left:-120px;
+
+    top:-40px;
+
+}
+
+.primary-button:hover::before{
+
+    animation:shine 1s;
+
+}
+
+@keyframes shine{
+
+    from{
+
+        left:-120px;
+
+    }
+
+    to{
+
+        left:320px;
+
+    }
+
+}
+
+
+/* =======================================================
+   SCROLL MOUSE
+======================================================= */
+
+.wheel{
+
+    animation:wheelMove 1.8s infinite;
+
+}
+
+@keyframes wheelMove{
+
+    0%{
+
+        opacity:0;
+
+        transform:translateY(0);
+
+    }
+
+    40%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:translateY(18px);
+
+    }
+
+}
+
+
+/* =======================================================
+   SECTION BACKGROUND
+======================================================= */
+
+.background-image{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.background-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transform:scale(1.08);
+
+}
+
+.section-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    rgba(0,0,0,.45),
+
+    rgba(0,0,0,.65)
+
+    );
+
+}
+
+
+/* =======================================================
+   CONTENT BOX
+======================================================= */
+
+.content{
+
+    position:relative;
+
+    z-index:3;
+
+    max-width:900px;
+
+    text-align:center;
+
+    padding:60px;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.content h2{
+
+    font-size:58px;
+
+    color:var(--gold);
+
+    margin-bottom:25px;
+
+}
+
+.content h3{
+
+    font-size:34px;
+
+    margin-bottom:30px;
+
+}
+
+.content p{
+
+    font-size:22px;
+
+    margin-bottom:18px;
+
+}
+
+
+/* =======================================================
+   MONEY TREE GLOW
+======================================================= */
+
+#abundance .background-image{
+
+    filter:
+
+    brightness(1.05)
+
+    saturate(1.25);
+
+}
+
+#abundance::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:900px;
+
+    height:900px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    rgba(255,215,90,.22),
+
+    transparent 70%
+
+    );
+
+    animation:
+
+    pulseGlow 6s ease-in-out infinite;
+
+}
+
+@keyframes pulseGlow{
+
+    0%{
+
+        transform:scale(.95);
+
+        opacity:.5;
+
+    }
+
+    50%{
+
+        transform:scale(1.1);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(.95);
+
+        opacity:.5;
+
+    }
+
+}
+
+
+/* =======================================================
+   VISION BOARD
+======================================================= */
+
+.vision-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:40px;
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+.vision-card{
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    transition:.5s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.vision-card:hover{
+
+    transform:
+
+    translateY(-15px)
+
+    scale(1.04);
+
+}
+
+.vision-card img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+}
+
+.vision-card h3{
+
+    padding:25px;
+
+    text-align:center;
+
+    color:var(--gold);
+
+}
+
+
+/* =======================================================
+   AFFIRMATION CARDS
+======================================================= */
+
+.affirmation-grid{
+
+    width:90%;
+
+    max-width:1400px;
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+.affirmation-card{
+
+    padding:45px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+
+    font-size:22px;
+
+    transition:.4s;
+
+}
+
+.affirmation-card:hover{
+
+    transform:
+
+    translateY(-12px);
+
+    box-shadow:
+
+    0 20px 50px rgba(212,175,55,.35);
+
+}
+/* ===========================================
+   GOLD HEADING GLOW
+=========================================== */
+
+h1{
+
+    animation:
+
+    titleGlow 5s ease-in-out infinite;
+
+}
+
+@keyframes titleGlow{
+
+    0%{
+
+        text-shadow:
+
+        0 0 20px rgba(212,175,55,.4);
+
+    }
+
+    50%{
+
+        text-shadow:
+
+        0 0 60px rgba(255,215,0,.8),
+
+        0 0 120px rgba(255,215,0,.4);
+
+    }
+
+    100%{
+
+        text-shadow:
+
+        0 0 20px rgba(212,175,55,.4);
+
+    }
+
+}
+/* ===========================================
+   MONEY TREE EFFECTS
+=========================================== */
+
+.money-effects{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+.gold-rays{
+
+    position:absolute;
+
+    width:1200px;
+
+    height:1200px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    rgba(255,215,0,.18),
+
+    rgba(255,215,0,.08),
+
+    transparent 70%
+
+    );
+
+    animation:
+
+    raysPulse 8s ease-in-out infinite;
+
+}
+
+@keyframes raysPulse{
+
+    0%{
+
+        transform:
+
+        translate(-50%,-50%)
+
+        scale(.9);
+
+        opacity:.5;
+
+    }
+
+    50%{
+
+        transform:
+
+        translate(-50%,-50%)
+
+        scale(1.08);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+
+        translate(-50%,-50%)
+
+        scale(.9);
+
+        opacity:.5;
+
+    }
+
+}
+/* ===========================================
+   GOLD COINS
+=========================================== */
+
+.coin{
+
+    position:absolute;
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    #FFF4A5,
+
+    #FFD700,
+
+    #C89B00
+
+    );
+
+    box-shadow:
+
+    0 0 10px gold,
+
+    0 0 20px gold;
+
+    animation:
+
+    coinFloat linear infinite;
+
+}
+
+@keyframes coinFloat{
+
+    0%{
+
+        transform:
+
+        translateY(30px)
+
+        scale(.8);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    80%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+
+        translateY(-150px)
+
+        scale(1.3);
+
+        opacity:0;
+
+    }
+
+}
+/* ===========================================
+   FLOATING CURRENCY
+=========================================== */
+
+.currency{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    color:#FFD700;
+
+    font-weight:bold;
+
+    animation:
+
+    moneyRise 9s linear forwards;
+
+    text-shadow:
+
+    0 0 15px gold;
+
+}
+
+@keyframes moneyRise{
+
+    from{
+
+        transform:
+
+        translateY(0)
+
+        rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+
+        translateY(-120vh)
+
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =======================================================
+   GOLD PARTICLES (floating dust across whole page)
+======================================================= */
+
+.gold-particle{
+
+    position:absolute;
+
+    width:4px;
+
+    height:4px;
+
+    border-radius:50%;
+
+    background:#FFD54A;
+
+    box-shadow:
+    0 0 8px #FFD54A,
+    0 0 15px #FFD54A;
+
+    animation:floatingParticle linear infinite;
+
+}
+
+@keyframes floatingParticle{
+
+    0%{
+        transform:translateY(80px);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    80%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+
+}
+
+
+/* =======================================================
+   CURSOR GLOW
+======================================================= */
+
+#cursorGlow{
+
+    position:fixed;
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(255,215,90,.55),transparent 70%);
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+    z-index:9998;
+    transition:transform .08s linear;
+}
+
+
+/* =======================================================
+   AFFIRMATION ACTIVE STATE
+======================================================= */
+
+.affirmation-card.active{
+
+    background:rgba(212,175,55,.18);
+    border-color:var(--gold);
+    box-shadow:0 20px 50px rgba(212,175,55,.4);
+    transform:translateY(-8px);
+}
+
+
+/* =======================================================
+   DASHBOARD
+======================================================= */
+
+#dashboard{
+
+    flex-direction:column;
+    padding:120px 30px;
+    gap:50px;
+}
+
+.dashboard-header{
+
+    text-align:center;
+    max-width:700px;
+}
+
+.dashboard-header h2{
+
+    font-size:46px;
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.dashboard-header p{
+
+    font-size:18px;
+}
+
+.dashboard-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:35px;
+    width:90%;
+    max-width:1200px;
+}
+
+.dashboard-card{
+
+    padding:40px 30px;
+    text-align:center;
+    border-radius:24px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow:var(--shadow);
+}
+
+.dashboard-card h3{
+
+    font-size:20px;
+    color:var(--gold-light);
+    margin-bottom:20px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-family:'Poppins',sans-serif;
+    font-weight:500;
+}
+
+#clock{
+
+    font-size:42px;
+    font-family:"Playfair Display",serif;
+    color:var(--gold);
+}
+
+#date{
+
+    margin-top:10px;
+    opacity:.75;
+}
+
+#greeting{
+
+    font-size:24px;
+    font-family:"Playfair Display",serif;
+}
+
+#dailyQuote{
+
+    font-style:italic;
+    font-size:19px;
+    line-height:1.6;
+    color:#F5F5F5;
+}
+
+
+/* =======================================================
+   SECTION TITLE (shared by Journal / Goals / Water / Music / Weather / Reflection)
+======================================================= */
+
+.section-title{
+
+    text-align:center;
+    max-width:700px;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+
+    font-size:44px;
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.section-title p{
+
+    font-size:18px;
+}
+
+#journal,
+#goals,
+#water,
+#music,
+#weather,
+#reflection{
+
+    flex-direction:column;
+    padding:120px 30px;
+}
+
+
+/* =======================================================
+   GRATITUDE JOURNAL
+======================================================= */
+
+.journal-container{
+
+    width:90%;
+    max-width:700px;
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+textarea{
+
+    width:100%;
+    min-height:100px;
+    resize:vertical;
+    padding:20px;
+    font-family:'Poppins',sans-serif;
+    font-size:16px;
+    color:white;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:16px;
+    outline:none;
+    transition:.4s;
+}
+
+textarea::placeholder{
+
+    color:rgba(255,255,255,.5);
+}
+
+textarea:focus{
+
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(212,175,55,.2);
+}
+
+button{
+
+    align-self:center;
+    margin-top:10px;
+    padding:16px 40px;
+    border:none;
+    border-radius:60px;
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:.5px;
+    color:#071320;
+    cursor:pointer;
+    background:linear-gradient(135deg,var(--gold),#F8E08A);
+    box-shadow:0 15px 40px rgba(212,175,55,.3);
+    transition:.4s;
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+    box-shadow:0 20px 50px rgba(212,175,55,.45);
+}
+
+
+/* =======================================================
+   GOALS
+======================================================= */
+
+.goal-list{
+
+    width:90%;
+    max-width:600px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.goal-list input{
+
+    padding:18px 22px;
+    font-family:'Poppins',sans-serif;
+    font-size:16px;
+    color:white;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:16px;
+    outline:none;
+    transition:.4s;
+}
+
+.goal-list input::placeholder{
+
+    color:rgba(255,255,255,.5);
+}
+
+.goal-list input:focus{
+
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(212,175,55,.2);
+}
+
+.goal-list button{
+
+    margin-top:10px;
+}
+
+
+/* =======================================================
+   WATER TRACKER
+======================================================= */
+
+.water-container{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:30px;
+}
+
+.water-glass{
+
+    position:relative;
+    width:120px;
+    height:220px;
+    border:3px solid rgba(255,255,255,.35);
+    border-radius:0 0 30px 30px;
+    overflow:hidden;
+    background:rgba(255,255,255,.05);
+}
+
+.water-level{
+
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:0%;
+    background:linear-gradient(180deg,#4FC3F7,#0288D1);
+    transition:height .6s ease;
+}
+
+
+/* =======================================================
+   MUSIC
+======================================================= */
+
+.music-player{
+
+    text-align:center;
+    padding:40px 50px;
+    border-radius:24px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow:var(--shadow);
+}
+
+.song-title{
+
+    font-family:"Playfair Display",serif;
+    font-size:22px;
+    color:var(--gold-light);
+    margin-bottom:20px;
+}
+
+.music-player audio{
+
+    width:280px;
+}
+
+
+/* =======================================================
+   WEATHER
+======================================================= */
+
+#weatherCard{
+
+    text-align:center;
+    padding:50px 60px;
+    border-radius:24px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow:var(--shadow);
+}
+
+.weather-icon{
+
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.temperature{
+
+    font-family:"Playfair Display",serif;
+    font-size:42px;
+    color:var(--gold);
+}
+
+.condition{
+
+    margin-top:10px;
+    opacity:.8;
+}
+
+
+/* =======================================================
+   EVENING REFLECTION
+======================================================= */
+
+#reflection textarea{
+
+    width:90%;
+    max-width:700px;
+    min-height:140px;
+}
+
+
+/* =======================================================
+   FOOTER
+======================================================= */
+
+footer{
+
+    position:relative;
+    text-align:center;
+    padding:100px 30px;
+    background:#050d16;
+}
+
+footer h2{
+
+    font-size:38px;
+    color:var(--gold);
+    margin-bottom:20px;
+}
+
+footer p{
+
+    max-width:600px;
+    margin:0 auto;
+}
+
+.footer-links{
+
+    margin-top:35px;
+}
+
+.footer-links a{
+
+    font-weight:600;
+    letter-spacing:.5px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+
+    color:var(--gold);
+}
