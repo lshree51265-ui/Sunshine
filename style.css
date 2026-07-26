@@ -1450,3 +1450,60 @@ h1{
     }
 
 }
+/* ===========================================
+   FLOATING CURRENCY
+=========================================== */
+
+.currency{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    color:#FFD700;
+
+    font-weight:bold;
+
+    animation:
+
+    moneyRise 9s linear forwards;
+
+    text-shadow:
+
+    0 0 15px gold;
+
+}
+
+@keyframes moneyRise{
+
+    from{
+
+        transform:
+
+        translateY(0)
+
+        rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+
+        translateY(-120vh)
+
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
