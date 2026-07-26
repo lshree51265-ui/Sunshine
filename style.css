@@ -1,0 +1,1245 @@
+/* =======================================================
+   MORNING LUXURY
+   Version 1.0
+======================================================= */
+
+/* ===========================
+   GOOGLE FONTS
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+
+/* ===========================
+   ROOT VARIABLES
+=========================== */
+
+:root{
+
+    --gold:#D4AF37;
+    --gold-light:#F7E7CE;
+    --champagne:#F9F4E8;
+    --white:#FFFFFF;
+
+    --navy:#071320;
+    --navy-light:#0D2032;
+
+    --emerald:#0B5D4B;
+
+    --glass:rgba(255,255,255,.10);
+
+    --glass-border:rgba(255,255,255,.25);
+
+    --shadow:0 20px 60px rgba(0,0,0,.35);
+
+    --transition:.6s ease;
+
+}
+
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#08131F;
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#08131F;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(var(--gold),
+    #F7E7CE);
+
+    border-radius:30px;
+
+}
+
+
+/* ===========================
+   TYPOGRAPHY
+=========================== */
+
+h1,h2,h3{
+
+    font-family:"Playfair Display",serif;
+
+}
+
+p{
+
+    line-height:1.8;
+
+    color:#F5F5F5;
+
+}
+
+
+/* ===========================
+   LINKS
+=========================== */
+
+a{
+
+    text-decoration:none;
+
+    color:white;
+
+}
+
+
+/* ===========================
+   SECTION
+=========================== */
+
+section{
+
+    position:relative;
+
+    min-height:100vh;
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+}
+
+
+/* ===========================
+   LOADER
+=========================== */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#071320;
+
+    z-index:99999;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.loader-logo{
+
+    font-size:52px;
+
+    font-family:"Playfair Display";
+
+    color:var(--gold);
+
+    margin-bottom:20px;
+
+    letter-spacing:3px;
+
+}
+
+
+.loader-subtitle{
+
+    color:white;
+
+    opacity:.8;
+
+}
+
+
+.loader-progress{
+
+    margin-top:35px;
+
+    width:260px;
+
+    height:5px;
+
+    background:#1b3148;
+
+    overflow:hidden;
+
+    border-radius:100px;
+
+}
+
+
+.loader-bar{
+
+    height:100%;
+
+    width:0;
+
+    background:linear-gradient(
+    90deg,
+    var(--gold),
+    white);
+
+}
+
+
+/* ===========================
+   PARTICLES
+=========================== */
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:3;
+
+}
+
+
+/* ===========================
+   SUN
+=========================== */
+
+#sun{
+
+    position:fixed;
+
+    width:250px;
+
+    height:250px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+    #FFE78E,
+    #FDB813,
+    transparent);
+
+    top:75%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    filter:blur(4px);
+
+    opacity:.9;
+
+    z-index:1;
+
+}
+
+
+/* ===========================
+   CLOUDS
+=========================== */
+
+.cloud{
+
+    position:fixed;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:100px;
+
+    filter:blur(10px);
+
+    z-index:2;
+
+}
+
+.cloud1{
+
+    width:240px;
+
+    height:70px;
+
+    top:12%;
+
+    left:-250px;
+
+}
+
+.cloud2{
+
+    width:180px;
+
+    height:55px;
+
+    top:28%;
+
+    right:-200px;
+
+}
+
+.cloud3{
+
+    width:220px;
+
+    height:60px;
+
+    top:20%;
+
+    left:35%;
+
+}
+
+
+/* ===========================
+   NAVIGATION
+=========================== */
+
+nav{
+
+    position:fixed;
+
+    top:30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:88%;
+
+    padding:18px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:60px;
+
+    z-index:999;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.logo{
+
+    font-size:28px;
+
+    color:var(--gold);
+
+    font-family:"Playfair Display";
+
+}
+
+
+nav ul{
+
+    display:flex;
+
+    gap:32px;
+
+    list-style:none;
+
+}
+
+
+nav a{
+
+    transition:.4s;
+
+    font-weight:500;
+
+}
+
+
+nav a:hover{
+
+    color:var(--gold);
+
+}
+
+
+/* ===========================
+   HERO
+=========================== */
+
+#hero{
+
+    position:relative;
+
+}
+
+
+.hero-background{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+
+.hero-background img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transform:scale(1.12);
+
+}
+
+
+/* ===========================
+   GOLD OVERLAY
+=========================== */
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    rgba(0,0,0,.45),
+
+    rgba(7,19,32,.50),
+
+    rgba(7,19,32,.75)
+
+    );
+
+}
+
+
+/* ===========================
+   HERO CONTENT
+=========================== */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+
+    max-width:900px;
+
+    padding:30px;
+
+}
+
+
+.hero-content h2{
+
+    font-size:42px;
+
+    color:var(--gold-light);
+
+    margin-bottom:25px;
+
+}
+
+
+.hero-content h1{
+
+    font-size:92px;
+
+    line-height:1.1;
+
+    margin-bottom:35px;
+
+    text-shadow:
+
+    0 0 40px rgba(212,175,55,.4);
+
+}
+
+
+.hero-content p{
+
+    max-width:720px;
+
+    margin:auto;
+
+    font-size:22px;
+
+    margin-bottom:45px;
+
+}
+
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.primary-button{
+
+    display:inline-block;
+
+    padding:18px 44px;
+
+    border-radius:60px;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    var(--gold),
+
+    #F8E08A
+
+    );
+
+    color:#071320;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    transition:.4s;
+
+    box-shadow:
+
+    0 15px 40px rgba(212,175,55,.35);
+
+}
+
+.primary-button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 25px 60px rgba(212,175,55,.45);
+
+}
+
+
+/* ===========================
+   SCROLL INDICATOR
+=========================== */
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:45px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:10px;
+
+    z-index:10;
+
+}
+
+.mouse{
+
+    width:32px;
+
+    height:56px;
+
+    border:2px solid white;
+
+    border-radius:50px;
+
+}
+
+.wheel{
+
+    width:5px;
+
+    height:12px;
+
+    background:white;
+
+    border-radius:30px;
+
+    margin:8px auto;
+
+}
+/* =======================================================
+   HERO ANIMATIONS
+======================================================= */
+
+/* Slow cinematic zoom */
+
+.hero-background img{
+
+    animation:heroZoom 35s ease-in-out infinite alternate;
+
+}
+
+@keyframes heroZoom{
+
+    from{
+
+        transform:scale(1.10);
+
+    }
+
+    to{
+
+        transform:scale(1.25);
+
+    }
+
+}
+
+
+/* =======================================================
+   SUNRISE
+======================================================= */
+
+#sun{
+
+    animation:
+
+    sunrise 18s ease forwards,
+
+    sunGlow 5s ease-in-out infinite;
+
+}
+
+@keyframes sunrise{
+
+    from{
+
+        top:82%;
+        opacity:.2;
+        transform:translateX(-50%) scale(.7);
+
+    }
+
+    to{
+
+        top:12%;
+        opacity:1;
+        transform:translateX(-50%) scale(1);
+
+    }
+
+}
+
+@keyframes sunGlow{
+
+    0%{
+
+        box-shadow:0 0 60px #FDB813;
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 120px #FFD55A,
+        0 0 220px rgba(255,215,90,.6);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 60px #FDB813;
+
+    }
+
+}
+
+
+/* =======================================================
+   CLOUD MOVEMENT
+======================================================= */
+
+.cloud1{
+
+    animation:cloudLeft 90s linear infinite;
+
+}
+
+.cloud2{
+
+    animation:cloudRight 110s linear infinite;
+
+}
+
+.cloud3{
+
+    animation:cloudMiddle 75s linear infinite;
+
+}
+
+@keyframes cloudLeft{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(1800px);
+
+    }
+
+}
+
+@keyframes cloudRight{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-1700px);
+
+    }
+
+}
+
+@keyframes cloudMiddle{
+
+    0%{
+
+        transform:translateX(-150px);
+
+    }
+
+    50%{
+
+        transform:translateX(250px);
+
+    }
+
+    100%{
+
+        transform:translateX(-150px);
+
+    }
+
+}
+
+
+/* =======================================================
+   HERO TEXT
+======================================================= */
+
+.hero-content h2{
+
+    animation:
+
+    fadeUp 1.4s .4s both;
+
+}
+
+.hero-content h1{
+
+    animation:
+
+    fadeUp 1.4s .9s both;
+
+}
+
+.hero-content p{
+
+    animation:
+
+    fadeUp 1.4s 1.5s both;
+
+}
+
+.primary-button{
+
+    animation:
+
+    fadeUp 1.4s 2s both;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        translateY(0);
+
+    }
+
+}
+
+
+/* =======================================================
+   GOLD BUTTON SHIMMER
+======================================================= */
+
+.primary-button{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.primary-button::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:80px;
+
+    height:200%;
+
+    background:
+
+    rgba(255,255,255,.4);
+
+    transform:rotate(25deg);
+
+    left:-120px;
+
+    top:-40px;
+
+}
+
+.primary-button:hover::before{
+
+    animation:shine 1s;
+
+}
+
+@keyframes shine{
+
+    from{
+
+        left:-120px;
+
+    }
+
+    to{
+
+        left:320px;
+
+    }
+
+}
+
+
+/* =======================================================
+   SCROLL MOUSE
+======================================================= */
+
+.wheel{
+
+    animation:wheelMove 1.8s infinite;
+
+}
+
+@keyframes wheelMove{
+
+    0%{
+
+        opacity:0;
+
+        transform:translateY(0);
+
+    }
+
+    40%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:translateY(18px);
+
+    }
+
+}
+
+
+/* =======================================================
+   SECTION BACKGROUND
+======================================================= */
+
+.background-image{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.background-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transform:scale(1.08);
+
+}
+
+.section-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    rgba(0,0,0,.45),
+
+    rgba(0,0,0,.65)
+
+    );
+
+}
+
+
+/* =======================================================
+   CONTENT BOX
+======================================================= */
+
+.content{
+
+    position:relative;
+
+    z-index:3;
+
+    max-width:900px;
+
+    text-align:center;
+
+    padding:60px;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.content h2{
+
+    font-size:58px;
+
+    color:var(--gold);
+
+    margin-bottom:25px;
+
+}
+
+.content h3{
+
+    font-size:34px;
+
+    margin-bottom:30px;
+
+}
+
+.content p{
+
+    font-size:22px;
+
+    margin-bottom:18px;
+
+}
+
+
+/* =======================================================
+   MONEY TREE GLOW
+======================================================= */
+
+#abundance .background-image{
+
+    filter:
+
+    brightness(1.05)
+
+    saturate(1.25);
+
+}
+
+#abundance::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:900px;
+
+    height:900px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    rgba(255,215,90,.22),
+
+    transparent 70%
+
+    );
+
+    animation:
+
+    pulseGlow 6s ease-in-out infinite;
+
+}
+
+@keyframes pulseGlow{
+
+    0%{
+
+        transform:scale(.95);
+
+        opacity:.5;
+
+    }
+
+    50%{
+
+        transform:scale(1.1);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(.95);
+
+        opacity:.5;
+
+    }
+
+}
+
+
+/* =======================================================
+   VISION BOARD
+======================================================= */
+
+.vision-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:40px;
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+.vision-card{
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    transition:.5s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.vision-card:hover{
+
+    transform:
+
+    translateY(-15px)
+
+    scale(1.04);
+
+}
+
+.vision-card img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+}
+
+.vision-card h3{
+
+    padding:25px;
+
+    text-align:center;
+
+    color:var(--gold);
+
+}
+
+
+/* =======================================================
+   AFFIRMATION CARDS
+======================================================= */
+
+.affirmation-grid{
+
+    width:90%;
+
+    max-width:1400px;
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+.affirmation-card{
+
+    padding:45px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+
+    font-size:22px;
+
+    transition:.4s;
+
+}
+
+.affirmation-card:hover{
+
+    transform:
+
+    translateY(-12px);
+
+    box-shadow:
+
+    0 20px 50px rgba(212,175,55,.35);
+
+}
